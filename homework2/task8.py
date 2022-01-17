@@ -8,18 +8,6 @@ def show(func):
         result = func(*args, **kwargs)
         return result
     return new_func
-
-def names_generator(num=1):
-    i = 0
-    while i < num:
-        s = ''
-        for k in range(0, 3):
-            s += chr(randrange(97, 122)) * 5
-            if k < 2:
-                s += ' '
-        yield s
-        i += 1
-gen = names_generator()
         
 def initials(name):
     l = name.split()
