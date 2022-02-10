@@ -9,5 +9,8 @@ def ordered(spisok_input):
     return new_spisok
 
 
-###
-    
+# второе решение
+
+def ordered2(spisok_input):
+    return list(set(spisok_input))
+
