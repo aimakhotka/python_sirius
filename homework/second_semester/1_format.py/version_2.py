@@ -7,7 +7,7 @@ def error_alignment(i_input):
     return i_input
 
 def error_N(i_input):
-    if i_input > 0:
+    if int(i_input) > 0:
         return i_input
     else:
         print('Ошибка в вводе аргументов. Попробуйте снова.')
@@ -23,7 +23,7 @@ def user_input():
     ]
     count = 0
     for i in pattern:
-        i_input = input(pattern[i])
+        i_input = input(i)
         if count == 0:
             error_alignment(i_input)
         elif count == 2:
@@ -32,16 +32,16 @@ def user_input():
             i_input = i_input.split()
         else:
             pass
-        i_input += list_input
+        list_input.append(i_input)
         count += 1
     return list_input
 
 
-def func(list_input):
-    print('{0:{1}{2}{3}}'.format(list_input[0], list_input[1], 
-    list_input[2], list_input[4]))
+def func(*list_input):
+    for i in list_input[3]:
+        print('{0:{1}{2}{3}}'.format(i, list_input[1], list_input[0], list_input[2]))
 
-
-user_input()
-func(list_input)
+# print(user_input())
+# print(list_input)
+func(user_input())
 # print('{0:{1}{2}{3}}'.format(arg[0], symbol, new_alignment, N))
