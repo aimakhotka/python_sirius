@@ -6,21 +6,22 @@ arg = input('Введите аргументы через пробел: ').split
 
 
 
-def func(arg, alignment, N, symbol):
+def func(arg, alignment, N, symbol=' '):
     if N <= 0:
         print('Количество символов заполнения должно быть больше нуля.')
 
     for i in arg:
         if len(i) > N:
             print('Длина каждого аргумента не должна превышать количество символов заполнения.')
-    
+    text = ''
     words = ['center', 'left', 'right']
     if alignment in words:
         new_alignment = ['^', '<', '>'][words.index(alignment)]
         for i in arg:
-            print('{0:{1}{2}{3}}'.format(i, symbol, new_alignment, N))
+            text += '{0:{1}{2}{3}}'.format(i, symbol, new_alignment, N) + '\n'
+        return text
     else:
         print('Ошибка в вводе типа выравнивания')
 
 
-func(arg, alignment, N, symbol)
+print(func(arg, alignment, N, symbol))
