@@ -20,4 +20,4 @@ car2 = Car('Slow', 100)
 car3 = Car('Middle', 150)
 car_list = [car1, car2, car3]
 
-print(*[i.name for i in Races.race(car_list, 1)])
+print(*[i.name for i in Races.race(car_list, 2)])
