@@ -4,7 +4,7 @@ pathh = input('Введите название файла: ')
 text1 = input('Введите текст, который необходимо заменить: ')
 text2 = input('Введите текст для замены: ')
 abs_path = os.path.abspath(pathh)
-print
+
 
 def swap(abs_path, pathh, text1, text2):
     if not os.path.exists(abs_path):
