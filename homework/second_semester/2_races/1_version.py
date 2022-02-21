@@ -14,7 +14,7 @@ class Races:
         if laps > lenght:
             laps = lenght
         for i in range(laps):
-            droped_out = result.pop(random.randint(0, len(result) - i - 1))
+            droped_out = result.pop(random.randint(0, len(result)))
             print(droped_out.name, 'попал в аварию!')
             droped_car.append(droped_out)
         result += droped_car[::-1]
