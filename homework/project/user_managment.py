@@ -4,8 +4,8 @@ import sys
 import getpass
   
 def add_user(login):
-    print("Adding new user account to %s" % os.uname()[1])
-    print(f"Setting up account {login}...")
+    print("Adding new user account to %s\n" % os.uname()[1], 
+          f"\nSetting up account {login}...\n")
     
     try:
         subprocess.run(['useradd', '-m', '-d', f'/home/{login}', login])      
@@ -31,10 +31,10 @@ def del_user(login):
         sys.exit(1)
 
 def change_user(login):
-    print("\nWould you like to change? Write a number OR press q\n")
-    print("1) Block user \n2) Unblock user \n3) Add additional info")
-    print("4) Change home directory \n5) Change user's group \n6) Add a user to additional groups")
-    print("7) Change username \n8) Change command shell \n9) Change UID \n10) Change GID\n")
+    print("\nWould you like to change? Write a number OR press q\n",
+          "\n1) Block user \n2) Unblock user \n3) Add additional info", 
+          "\n4) Change home directory \n5) Change user's group \n6) Add a user to additional groups", 
+          "\n7) Change username \n8) Change command shell \n9) Change UID \n10) Change GID\n")
     answ = input("Your choice: ")
     
     
@@ -82,8 +82,9 @@ if usr != 'root':
     sys.exit(1)
 
 while True:
-    print("\nLet's start! What do you want to do? [1/2/3/4/5]\n")
-    print("1) Add new user account \n2) Delete user account \n3) Change user account \n4) Display a list of users \n5) Show detailed user information \n6) Exit\n")
+    print("\nLet's start! What do you want to do? [1/2/3/4/5]\n", 
+          "\n1) Add new user account \n2) Delete user account \n3) Change user account",
+          "\n4) Display a list of users \n5) Show detailed user information \n6) Exit\n")
     answ = input('Your choice: ')
     if answ == '1':
         tmp_var = input("Enter user login to adding: ")
